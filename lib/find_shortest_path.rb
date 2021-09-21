@@ -4,13 +4,12 @@ require_relative 'breadth_first_search'
 
 def reconstruct_path(came_from:, start:, goal:)
   current = goal
-  path = []
+  path = [goal]
   while current != start
+    current = came_from[current]
     path << current
-    current = came_from[goal]
   end
-  current << start
-  current.revert
+  path.reverse
 end
 
 def find_shortest_path(graph:, start:, goal:)
