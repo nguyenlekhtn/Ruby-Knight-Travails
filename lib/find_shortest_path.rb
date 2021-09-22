@@ -12,7 +12,7 @@ def reconstruct_path(came_from:, start:, goal:)
   path.reverse
 end
 
-def find_shortest_path(graph:, start:, goal:)
-  came_from = breadth_first_search(graph: graph, start: start, goal: goal)
+def find_shortest_path(graph:, start:, goal:, search_method: method(:breadth_first_search))
+  came_from, * = search_method.call(graph: graph, start: start, goal: goal)
   reconstruct_path(came_from: came_from, start: start, goal: goal)
 end
