@@ -18,7 +18,7 @@ class KnightGraph
 
   def neighbours(location)
     x, y = location
-    neighbours = [
+    possible_moves = [
       [x + 2, y + 1],
       [x + 2, y - 1],
       [x - 2, y + 1],
@@ -29,6 +29,9 @@ class KnightGraph
       [x - 1, y - 2]
     ]
 
-    neighbours.select { |x, y| in_range?(x, y) }
+    # ugly path hack https://www.redblobgames.com/pathfinding/a-star/implementation.html#troubleshooting-ugly-path
+    possible_moves.reverse! if (x + y).even?
+
+    possible_moves.select { |neighbour_x, neighbour_y| in_range?(neighbour_x, neighbour_y) }
   end
 end
