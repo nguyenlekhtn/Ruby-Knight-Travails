@@ -6,10 +6,10 @@ My soluion program contains 3 search alogirthms: Breadth First Search, Dijkstra'
 
 ## Problem Description
 
-The task is to create a #knight_travails methods which received coordinates of the X square on chess board and location of the Y square, then showed the shortest path from X to Y as an array of coordinates of moves. The moves have to behave like knight move, that is move 2 in acoordinate and 1 in the other.
+The task is to create a #knight_travails method which received coordinates of the X square and Y square on the board, then showed the shortest path from X to Y as an array of coordinates of moves. The moves have to behave like knight move, that is move 2 in a coordinate and 1 in the other.
 
 ## Usage
-Clone the repo and change the lstart square and end square in `main.rb` file, eg: `knight_moves([0, 0], [3, 3])`. Then run `ruby main.rb` in bash to find the closest path between them.
+Clone the repo and change the start square and end square in `main.rb` file, eg: `knight_moves([0, 0], [3, 3])`. Then run `ruby main.rb` in bash to find the closest path between them.
 
 The default search method is astar_search. To change to the 2 others method, change `:astar_search` inside `knight_moves.rb` file into `:breadth_first_search` or `dijksta.rb`
 
